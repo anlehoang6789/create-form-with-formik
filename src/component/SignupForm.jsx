@@ -116,25 +116,3 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
-
-// Cách thông thường để tạo form là dùng useState() để set thay đổi giá trị cho các ô input
-// Và dùng useEffect() với tham số là các state để if-else điều kiện check lỗi
-// Nhưng cách này sẽ rất tốn sức vì ph tạo khá nhiều state và ph dùng rất nhiều useEffect() với tham số state
-// if nó để set điều kiện input
-
-// Nhưng ta sẽ dùng formik để quản lí form thay cho dùng useState()
-// Kết hợp với Yup để validation các regex cho input
-/**
- * Lợi ích của formik-- giúp hiển thị ra lỗi trực tiếp bên dưới input
- * 1. Dùng useFormik và tạo 1 giá trị ban đầu (initialValue)
- * 2. formik cung cấp sẵn handleChange để nhận giá trị thay đổi của input . Nhớ là thằng này cần
- *      thêm 1 value {values.name} để có thể biết sẽ thay đổi thằng nào
- * 3. Lưu ý: đặt id và name trong input phải trùng với initialValue của formik
- * 4. Và để submit form formik cũng hỗ trợ 1 hàm built in là handleSubmit
- * 5. Và để hiển thị lỗi thì formik có hỗ trợ 1 cái là formik.errors -- và chỉ cần để chúng dưới input để
- *      khi có lỗi sẽ hiển thị ra ngay bên dưới input
- */
-
-/**
- * Đối với Yup thì ta có thể tạo ra một validationSchema và chứa 1 Yup.object -- để tạo ra 1 luật lệ cho input
- */
